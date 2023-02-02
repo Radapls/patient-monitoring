@@ -10,10 +10,11 @@
  * @author Juan Felipe Rada <radapls8@gmail.com>
  * @date Wednesday, 1st February 2023
  */
+import React from 'react';
 
 import Patient from './Patient';
 
-export default function PatientList({patients, setPatient}) {
+export default function PatientList({patients, setPatient, deletePatient}) {
 
   return (
     <div  className='text-center md:w-1/2 lg:3/5 h-screen sm:overflow-y-scroll'>
@@ -29,10 +30,12 @@ export default function PatientList({patients, setPatient}) {
 
                 {patients.map(patient => {
                 return (
+
                 <Patient
                 patient={patient}
                 key={patient.id}
                 setPatient={setPatient}
+                deletePatient={deletePatient}
                 />
                 )
                 })}

@@ -13,9 +13,17 @@
 
 import React from 'react';
 
-export default function Patient({patient, setPatient}) {
+export default function Patient({patient, setPatient, deletePatient}) {
 
-const {patientName, owner, symptoms, date, email} = patient;
+const {patientName, owner, symptoms, date, email, id} = patient;
+
+const handleDelete = () => {
+    const response = confirm('Do you want to delete?')
+
+    if (response) {
+        deletePatient(id)
+    }
+}
 
   return (
     <div className='bg-white shadow-md rounded-lg p-10 px-5 m-16 text-start'>
@@ -43,11 +51,15 @@ const {patientName, owner, symptoms, date, email} = patient;
     <div className='flex justify-around mt-10'>
         <button
         onClick={() => setPatient(patient)}
+        type='button'
+        className='py-2 px-10 bg-indigo-600 hover:bg-indigo-700 font-bold uppercase text-white rounded-md'>
+        Edit
+        </button>
+
+        <button
             type='button'
-            className='py-2 px-10 bg-indigo-600 hover:bg-indigo-700 font-bold uppercase text-white rounded-md'>
-                Edit
-            </button>
-        <button type='button' className='py-2 px-10 bg-red-600 hover:bg-red-700 font-bold uppercase text-white rounded-md'>Delete</button>
+            className='py-2 px-10 bg-red-600 hover:bg-red-700 font-bold uppercase text-white rounded-md'
+            onClick={handleDelete}>Delete</button>
     </div>
 </div>
   )

@@ -14,7 +14,7 @@
 import React, { useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Form({patients, setPatients, patient}) {
+export default function Form({patients, setPatients, patient, setPatient}) {
 
     const [patientName, setPatientName] = useState('');
     const [owner, setOwner] = useState('');
@@ -44,17 +44,33 @@ export default function Form({patients, setPatients, patient}) {
         e.preventDefault();
 
         const patientOrder = {
-            patientName,
-            owner,
-            email,
-            date,
-            symptoms,
-            id: uniqueId()
-            }
+        patientName,
+        owner,
+        email,
+        date,
+        symptoms
+        }
 
+        if (patient.id) {
+
+        // Edit register
+
+        patientOrder.id = patient.id
+
+        const editPatient = patients.map(patientState => patientState.id === patient.id ? patientOrder : patientState)
+
+        setPatients(editPatient)
+        setPatient({})
+
+        } else {
+
+        // New register
         // Add the patient with a copy of the object
 
+        patientOrder.id = uniqueId()
         setPatients([...patients, patientOrder])
+
+        }
 
         // Restart the form
 
@@ -80,7 +96,6 @@ export default function Form({patients, setPatients, patient}) {
 
         <form
             onSubmit={handleSubmit}
-            action=""
             className='bg-white shadow-md rounded-md p-10 px-5 m-16 text-start'>
 
             <div className='mb-6'>
@@ -164,7 +179,7 @@ export default function Form({patients, setPatients, patient}) {
 
             <input
                 type="submit"
-                value="Add patient"
+                value={patient.id ? "Edit patient" : "Add patient"}
                 className='bg-indigo-600 w-full p-3 text-white font-bold uppercase rounded-lg hover:bg-indigo-700 cursor-pointer transition-all'/>
         </form>
 
