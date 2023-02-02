@@ -26,7 +26,7 @@ const handleDelete = () => {
 }
 
   return (
-    <div className='bg-white shadow-md rounded-lg p-10 px-5 m-16 text-start'>
+    <div className='bg-white shadow-md rounded-lg p-5 px-5 m-16 text-start'>
     <p className='font-bold mb-3 text-gray-700 uppercase'>Name: {''}
         <span className='font-normal normal-case'> {patientName}
         </span>
@@ -48,7 +48,7 @@ const handleDelete = () => {
         </span>
     </p>
 
-    <div className='flex justify-around mt-10'>
+    <div className='flex md:flex-wrap justify-around mt-5'>
         <button
         onClick={() => setPatient(patient)}
         type='button'

@@ -86,17 +86,17 @@ export default function Form({patients, setPatients, patient, setPatient}) {
 
   return (
     <div  className='text-center md:w-1/2 lg:3/5'>
-        <h2 className='font-bold text-3xl p-3'>
+        <h2 className='font-bold sm:text-2xl text-3xl p-2'>
         Patient follow-up
         </h2>
 
-        <p className='text-lg mt-5 mb-5'>Add patient & {''}
+        <p className='text-lg mt-2 mb-5'>Add patient & {''}
         <span className='text-indigo-600 font-bold' >Admin</span>
         </p>
 
         <form
             onSubmit={handleSubmit}
-            className='bg-white shadow-md rounded-md p-10 px-5 m-16 text-start'>
+            className='bg-white shadow-md rounded-md p-5 px-5 m-16 text-start'>
 
             <div className='mb-6'>
                 <label

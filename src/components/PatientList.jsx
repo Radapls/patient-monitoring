@@ -21,10 +21,10 @@ export default function PatientList({patients, setPatient, deletePatient}) {
 
         {patients && patients.length ? (
             <>
-                <h2 className='font-bold text-3xl p-3'>
+                <h2 className='font-bold sm:text-2xl text-3xl p-2'>
                 Patient List
                 </h2>
-                <p className='text-lg mt-5 mb-5'>Admin your {''}
+                <p className='text-lg mt-2 mb-5'>Admin your {''}
                 <span className='text-indigo-600 font-bold'>Patients and appointments</span>
                 </p>
 
@@ -42,11 +42,11 @@ export default function PatientList({patients, setPatient, deletePatient}) {
             </>
         ) : (
             <>
-                <h2 className='font-bold text-3xl p-3'>
+                <h2 className='font-bold sm:text-2xl text-3xl p-2'>
                 There are no patients
                 </h2>
 
-                <p className='text-lg mt-5 mb-5'>Start adding patients {''}
+                <p className='text-lg mt-2 mb-5'>Start adding patients {''}
                 <span className='text-indigo-600 font-bold'>and there appears</span>
                 </p>
             </>

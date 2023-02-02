@@ -31,11 +31,11 @@ function App() {
     }
 
   return (
-    <div className='container sm:mx-2 mx-auto mt-6'>
+    <div className='container mx-auto mt-6'>
 
         <Header/>
 
-        <div className='mt-10 sm:flex'>
+        <div className='mt-10 md:flex'>
 
             <Form
             patients={patients}

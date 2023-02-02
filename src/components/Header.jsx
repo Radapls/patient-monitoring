@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <div className='flex items-center justify-center mx-auto'>
         <img src={logo} alt="_blank" draggable="false"/>
-        <h1 className='md:text-4xl font-black p-2 sm:text-2xl'>Patient Monitoring</h1>
+        <h1 className='md:text-4xl font-black p-2 sm:text-3xl'>Patient Monitoring</h1>
     </div>
   )
 }
